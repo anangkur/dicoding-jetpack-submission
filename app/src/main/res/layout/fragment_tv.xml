@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout style="@style/LinearVerticalDefault"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout style="@style/LinearVerticalDefault"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--popular tv-->
+    <TextView
+        android:id="@+id/tv_title_popular"
+        style="@style/TextTitleNormal"
+        android:text="@string/category_popular"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_parent_tv"
-        style="@style/RecyclerDefault"/>
-</LinearLayout>
+        android:id="@+id/recycler_tv_popular"
+        style="@style/RecyclerWrap"
+        android:paddingEnd="@dimen/dimens_16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_popular"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!--new tv-->
+    <TextView
+        android:id="@+id/tv_title_new"
+        style="@style/TextTitleNormal"
+        android:text="@string/category_new"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        app:layout_constraintTop_toBottomOf="@id/recycler_tv_popular"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tv_new"
+        style="@style/RecyclerWrap"
+        android:paddingEnd="@dimen/dimens_16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_new"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!--new tv-->
+    <TextView
+        android:id="@+id/tv_title_rating"
+        style="@style/TextTitleNormal"
+        android:text="@string/category_rating"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_16dp"
+        app:layout_constraintTop_toBottomOf="@id/recycler_tv_new"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tv_rating"
+        style="@style/RecyclerWrap"
+        android:paddingEnd="@dimen/dimens_16dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_rating"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

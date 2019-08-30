@@ -12,7 +12,7 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/vp_slider"
                 style="@style/ViewPagerDefault"
-                android:layout_height="@dimen/dimens_240dp"/>
+                android:layout_height="@dimen/dimens_280dp"/>
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anangkur.madesubmission1">
+    package="com.anangkur.jetpacksubmission1">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,9 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.anangkur.madesubmission1.feature.languageSetting.LanguageSettingActivity"></activity>
-        <activity android:name=".feature.detail.DetailActivity" />
-        <activity android:name=".feature.main.MainActivity">
+        <activity android:name="com.anangkur.jetpacksubmission1.feature.detail.DetailActivity" />
+        <activity android:name="com.anangkur.jetpacksubmission1.feature.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -23,6 +23,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/detail/DetailViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/MainViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/tv/TvFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/data/local/Preferences.kt">
           <value>
             <set />
@@ -63,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/custom/ImageSliderFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/detail/DetailActivity.kt">
           <value>
             <set />
@@ -74,6 +94,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/detail/DetailView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/detail/DetailViewModel.kt">
           <value>
             <set />
           </value>
@@ -114,6 +139,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/main/MainView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/feature/main/MainViewModel.kt">
           <value>
             <set />
           </value>

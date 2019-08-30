@@ -13,6 +13,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_horizontal"
             style="@style/RecyclerWrap"
+            android:paddingEnd="@dimen/dimens_16dp"
+            android:clipToPadding="false"
             android:nestedScrollingEnabled="false"/>
         <TextView
             style="@style/TextTitleBig"

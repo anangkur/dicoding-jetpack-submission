@@ -7,7 +7,8 @@
     <ImageView
         android:id="@+id/iv_item"
         android:layout_height="@dimen/dimens_150dp"
-        android:layout_width="@dimen/dimens_100dp"/>
+        android:layout_width="@dimen/dimens_100dp"
+        android:elevation="@dimen/dimens_4dp"/>
     <LinearLayout
         style="@style/LinearVerticalWrap"
         android:layout_height="match_parent"
@@ -20,7 +21,8 @@
         <RatingBar
             android:id="@+id/rating"
             style="@style/RatingBarSmall"
-            android:layout_marginVertical="@dimen/dimens_10dp"/>
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:layout_marginBottom="@dimen/dimens_10dp"/>
         <LinearLayout
             style="@style/LinearHorizontalWrap">
             <TextView
