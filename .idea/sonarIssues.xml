@@ -58,6 +58,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/utils/Const.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/madesubmission1/data/local/Preferences.kt">
           <value>
             <set />
@@ -383,6 +388,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/detail/DetailViewModelTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/main/MainViewModelTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
           <value>
             <set />
@@ -414,6 +429,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../android-nutricell/app/src/main/res/layout/resep_dokter_detail_item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/Programming/Android/Sdk/platforms/android-29/android.jar!/android/content/Intent.class">
           <value>
             <set />
           </value>

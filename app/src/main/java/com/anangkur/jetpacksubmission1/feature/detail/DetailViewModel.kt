@@ -10,11 +10,5 @@ import com.anangkur.jetpacksubmission1.utils.Const
 
 class DetailViewModel(application: Application): AndroidViewModel(application){
 
-    fun getResultIntent(intent: Intent): Result?{
-        return if (intent.hasExtra(Const.EXTRA_DETAIL)){
-            intent.getParcelableExtra(Const.EXTRA_DETAIL)
-        }else{
-            null
-        }
-    }
+    var result: Result? = null
 }
