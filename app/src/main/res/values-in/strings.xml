@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MADE Submission 1</string>
+    <string name="app_name">Jetpack Submission 1</string>
 
     <!--others-->
     <string name="text_lorem_ipsum">Lorem Ipsum</string>
@@ -40,4 +40,8 @@
     <!--menu-->
     <string name="menu_change_language">Ubah Bahasa</string>
     <!--end of menu-->
+
+    <!--error-->
+    <string name="error_null">Data tidak dapat ditemukan</string>
+    <!--end of error-->
 </resources>

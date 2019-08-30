@@ -3,9 +3,9 @@ package com.anangkur.jetpacksubmission1.feature.main
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.anangkur.jetpacksubmission1.R
@@ -31,12 +31,14 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         setupToolbar()
+        setupViewPagerSlider()
+
         setupViewModel()
+
         setupTabAdapter()
         setupViewPager()
         setupCustomTab()
         setupSelectedCustomTab(0)
-        setupViewPagerSlider()
     }
 
     private fun setupToolbar(){
@@ -46,14 +48,11 @@ class MainActivity : AppCompatActivity(){
 
     private fun setupViewModel(){
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.apply {
-            getListMoviePopular(Const.jsonPopularMovies).observe(this@MainActivity, Observer {
-                for (item in it){
-                    pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
-                }
-                setupSliderPage(pagerAdapter)
-            })
+        val data = viewModel.createDataMoviePopular(Const.jsonPopularMovies)
+        for (item in data){
+            pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
         }
+        setupSliderPage(pagerAdapter)
     }
 
     private fun disableClickTablayout(tabLayout: TabLayout){

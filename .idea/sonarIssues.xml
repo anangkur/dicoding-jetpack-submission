@@ -23,12 +23,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/custom/ImageSliderFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/detail/DetailActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/detail/DetailViewModel.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/MainViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/movie/MovieFragment.kt">
           <value>
             <set />
           </value>

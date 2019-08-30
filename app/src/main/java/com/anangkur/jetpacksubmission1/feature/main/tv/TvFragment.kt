@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -66,13 +65,9 @@ class TvFragment : Fragment(), MovieItemListener{
 
     private fun setupViewModel(){
         viewModel = (requireActivity() as MainActivity).viewModel
-        viewModel.apply {
-            getListTvPopular(Const.jsonPopularTv).observe(this@TvFragment, Observer {
-                adapterPopular.setRecyclerData(it)
-                adapterNew.setRecyclerData(it)
-                adapterRating.setRecyclerData(it)
-            })
-        }
+        adapterPopular.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
+        adapterNew.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
+        adapterRating.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
     }
 
     override fun onClickItem(data: Result) {

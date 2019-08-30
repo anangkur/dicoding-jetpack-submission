@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.anangkur.jetpacksubmission1.BuildConfig
@@ -39,26 +40,27 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupViewModel(){
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
-        viewModel.apply {
-            getResult(intent).observe(this@DetailActivity, Observer {
-                setupDataToView(it)
-            })
-        }
+        setupDataToView(viewModel.getResultIntent(intent))
     }
 
-    private fun setupDataToView(data: Result){
-        Glide.with(this)
-            .load("${BuildConfig.baseImageUrl}${data.backdrop_path}")
-            .apply(RequestOptions().centerCrop())
-            .apply(RequestOptions().placeholder(Utils.createCircularProgressDrawable(this)))
-            .apply(RequestOptions().error(R.drawable.ic_broken_image))
-            .into(iv_movie)
-        tv_title.text = data.original_title?:data.original_name
-        rating.rating = Utils.nomalizeRating(data.vote_average)
-        tv_release_date.text = data.release_date?:"-"
-        tv_language.text = data.original_language
-        tv_popularity.text = data.popularity.toString()
-        tv_overview.text = data.overview
+    private fun setupDataToView(data: Result?){
+        if (data != null){
+            Glide.with(this)
+                .load("${BuildConfig.baseImageUrl}${data.backdrop_path}")
+                .apply(RequestOptions().centerCrop())
+                .apply(RequestOptions().placeholder(Utils.createCircularProgressDrawable(this)))
+                .apply(RequestOptions().error(R.drawable.ic_broken_image))
+                .into(iv_movie)
+            tv_title.text = data.original_title?:data.original_name
+            rating.rating = Utils.nomalizeRating(data.vote_average)
+            tv_release_date.text = data.release_date?:"-"
+            tv_language.text = data.original_language
+            tv_popularity.text = data.popularity.toString()
+            tv_overview.text = data.overview
+        }else{
+            Toast.makeText(this, getString(R.string.error_null), Toast.LENGTH_SHORT).show()
+            finish()
+        }
     }
 
     companion object{

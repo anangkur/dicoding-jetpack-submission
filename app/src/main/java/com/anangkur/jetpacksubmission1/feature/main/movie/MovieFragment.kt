@@ -36,12 +36,8 @@ class MovieFragment : Fragment(), MovieItemListener{
 
     private fun setupViewModel(){
         viewModel = (requireActivity() as MainActivity).viewModel
-        viewModel.apply {
-            getListMoviePopular(Const.jsonPopularMovies).observe(this@MovieFragment, Observer {
-                movieHorizontalAdapter.setRecyclerData(it)
-                movieVerticalAdapter.setRecyclerData(it)
-            })
-        }
+        movieHorizontalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
+        movieVerticalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
     }
 
     private fun setupVerticalAdapter(){

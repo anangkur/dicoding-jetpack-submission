@@ -10,20 +10,11 @@ import com.anangkur.jetpacksubmission1.utils.Const
 
 class DetailViewModel(application: Application): AndroidViewModel(application){
 
-    private var result: MutableLiveData<Result>? = null
-
-    fun getResult(intent: Intent): LiveData<Result>{
-        if (result == null){
-            result = MutableLiveData()
-            getResultIntent(intent)
-        }
-
-        return result!!
-    }
-
-    private fun getResultIntent(intent: Intent){
-        if (intent.hasExtra(Const.EXTRA_DETAIL)){
-            result?.value = intent.getParcelableExtra(Const.EXTRA_DETAIL)
+    fun getResultIntent(intent: Intent): Result?{
+        return if (intent.hasExtra(Const.EXTRA_DETAIL)){
+            intent.getParcelableExtra(Const.EXTRA_DETAIL)
+        }else{
+            null
         }
     }
 }
