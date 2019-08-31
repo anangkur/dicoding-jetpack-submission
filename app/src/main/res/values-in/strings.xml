@@ -8,12 +8,9 @@
     <string name="text_language">Bahasa</string>
     <string name="text_popularity">Popularitas</string>
     <string name="text_overview">Ikhtisar</string>
-    <string name="text_bahasa_indonesia">Bahasa Indonesia</string>
-    <string name="text_english">English</string>
     <!--end of others-->
 
     <!--toolbar-->
-    <string name="toolbar_setting_language">Ubah Bahasa</string>
     <!--end of toolbar-->
 
     <!--tab-->
@@ -29,19 +26,19 @@
     <!--end of tv categories-->
 
     <!--language-->
-    <string name="language_english">en</string>
-    <string name="language_indonesian">in</string>
     <!--end of language-->
 
     <!--button-->
-    <string name="btn_simpan">Simpan</string>
     <!--text button-->
 
     <!--menu-->
-    <string name="menu_change_language">Ubah Bahasa</string>
     <!--end of menu-->
 
     <!--error-->
     <string name="error_null">Data tidak dapat ditemukan</string>
+    <string name="desc_image_now_playing">image for now playing movie</string>
+    <string name="desc_image_tv">image for tv</string>
+    <string name="desc_image_popular">image for movie popular</string>
+    <string name="desc_image_slider">image for slider</string>
     <!--end of error-->
 </resources>

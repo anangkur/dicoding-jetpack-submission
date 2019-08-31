@@ -8,12 +8,9 @@
     <dimen name="dimens_16dp">16dp</dimen>
     <dimen name="dimens_24dp">24dp</dimen>
     <dimen name="dimens_32dp">32dp</dimen>
-    <dimen name="dimens_48dp">48dp</dimen>
     <dimen name="dimens_120dp">120dp</dimen>
-    <dimen name="dimens_144dp">144dp</dimen>
     <dimen name="dimens_160dp">160dp</dimen>
     <dimen name="dimens_240dp">240dp</dimen>
-    <dimen name="dimens_320dp">320dp</dimen>
 
     <!-- Dimens for text size -->
     <dimen name="size_14sp">14sp</dimen>

@@ -9,14 +9,6 @@ object Utils{
         return ((oldValue-0)/10-0)*((5-0)+0)
     }
 
-    fun setLocale(lang: String, context: Context) {
-        val res = context.resources
-        val dm = res.displayMetrics
-        val conf = res.configuration
-        conf.setLocale(Locale(lang.toLowerCase()))
-        res.updateConfiguration(conf, dm)
-    }
-
     fun createCircularProgressDrawable(context: Context): CircularProgressDrawable{
         val circularProgressDrawable = CircularProgressDrawable(context)
         circularProgressDrawable.strokeWidth = 4f

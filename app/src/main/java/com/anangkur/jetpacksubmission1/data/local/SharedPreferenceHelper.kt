@@ -13,8 +13,7 @@ class SharedPreferenceHelper(context: Context){
     }
 
     fun loadLanguage(): String?{
-        val language = loadStringPreferences(Const.PREF_LANGUAGE)
-        return language
+        return loadStringPreferences(Const.PREF_LANGUAGE)
     }
 
     private fun saveStringPreferences(key: String, language: String){

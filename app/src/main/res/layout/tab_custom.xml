@@ -4,7 +4,8 @@
     android:gravity="center">
     <ImageView
         android:id="@+id/iv_tab"
-        style="@style/ImageViewWrapAll" />
+        style="@style/ImageViewWrapAll"
+        android:contentDescription="@string/desc_image_slider" />
     <TextView
         android:id="@+id/tv_tab"
         style="@style/TextTitleNormal"

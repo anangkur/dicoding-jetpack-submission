@@ -3,10 +3,7 @@ package com.anangkur.jetpacksubmission1.feature.detail
 import android.content.Intent
 import androidx.test.rule.ActivityTestRule
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Rule
-import androidx.test.InstrumentationRegistry.getTargetContext
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -14,8 +11,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.utils.FakeConst
-import kotlinx.android.synthetic.main.activity_detail.view.*
-
 
 class DetailActivityTest {
 

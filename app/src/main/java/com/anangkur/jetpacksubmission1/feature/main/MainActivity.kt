@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.toolbar
 class MainActivity: AppCompatActivity(){
 
     private lateinit var tabAdapter: TabAdapter
-    lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: MainViewModel
 
     private lateinit var pagerAdapter: SliderTabAdapter
 

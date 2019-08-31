@@ -5,7 +5,8 @@
     <ImageView
         android:id="@+id/iv_slider"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimens_280dp" />
+        android:layout_height="@dimen/dimens_280dp"
+        android:contentDescription="TODO" />
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimens_280dp"
