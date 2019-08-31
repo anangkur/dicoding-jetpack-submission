@@ -9,32 +9,49 @@
             style="@style/CollapsingDefault"
             app:contentScrim="@color/black_60"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <ImageView
-                android:id="@+id/iv_movie"
-                style="@style/ImageViewWrapV"
-                android:layout_height="@dimen/dimens_320dp"
-                app:layout_collapseMode="parallax"
-                android:background="@color/colorPrimaryDark"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/black_40"/>
-            <LinearLayout
-                style="@style/LinearVerticalWrap"
-                android:layout_gravity="bottom"
-                android:layout_marginHorizontal="@dimen/dimens_32dp"
-                android:layout_marginBottom="@dimen/dimens_32dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ConstraintDefault">
+                <ImageView
+                    android:id="@+id/iv_movie"
+                    style="@style/ImageViewHeightRatio"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_collapseMode="parallax"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_40"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
                 <TextView
                     android:id="@+id/tv_title"
                     style="@style/TextTitleSuperExtraBig"
                     android:text="@string/text_lorem_ipsum"
                     android:textStyle="bold"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/rating"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintVertical_bias="0.8"/>
                 <RatingBar
                     android:id="@+id/rating"
                     style="@style/RatingBarSmall"
-                    android:layout_marginTop="@dimen/dimens_10dp"/>
-            </LinearLayout>
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/tv_title"
+                    app:layout_constraintHorizontal_bias="0"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"

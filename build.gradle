@@ -39,6 +39,7 @@ ext {
     glideVersion = '4.9.0'
     idleResourceVersion = '3.2.0'
     retrofitVersion = '2.5.0'
+    fragmentTestRuleVersion = '2.0.1'
 }
 
 allprojects {

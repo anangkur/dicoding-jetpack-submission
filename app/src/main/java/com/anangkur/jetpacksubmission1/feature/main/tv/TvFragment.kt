@@ -5,19 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
-import com.anangkur.jetpacksubmission1.feature.main.MainActivity
 import com.anangkur.jetpacksubmission1.feature.main.MainViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
 import com.anangkur.jetpacksubmission1.utils.Const
 import kotlinx.android.synthetic.main.fragment_tv.*
 
-class TvFragment : Fragment(), MovieItemListener{
+class TvFragment: Fragment(), MovieItemListener{
 
     private lateinit var adapterPopular: TvAdapter
     private lateinit var adapterNew: TvAdapter
@@ -64,7 +64,7 @@ class TvFragment : Fragment(), MovieItemListener{
     }
 
     private fun setupViewModel(){
-        viewModel = (requireActivity() as MainActivity).viewModel
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         adapterPopular.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
         adapterNew.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
         adapterRating.setRecyclerData(viewModel.createDataTvPopular(Const.jsonPopularTv))
@@ -72,5 +72,9 @@ class TvFragment : Fragment(), MovieItemListener{
 
     override fun onClickItem(data: Result) {
         DetailActivity.startActivity(requireContext(), data)
+    }
+
+    companion object{
+        fun getInstance(): TvFragment = TvFragment()
     }
 }

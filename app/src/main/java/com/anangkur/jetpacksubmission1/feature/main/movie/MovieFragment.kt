@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anangkur.jetpacksubmission1.R
@@ -16,7 +17,7 @@ import com.anangkur.jetpacksubmission1.feature.main.MainViewModel
 import com.anangkur.jetpacksubmission1.utils.Const
 import kotlinx.android.synthetic.main.fragment_movie.*
 
-class MovieFragment : Fragment(), MovieItemListener{
+class MovieFragment: Fragment(), MovieItemListener{
 
     private lateinit var viewModel: MainViewModel
     private lateinit var movieVerticalAdapter: MovieVerticalAdapter
@@ -35,7 +36,7 @@ class MovieFragment : Fragment(), MovieItemListener{
     }
 
     private fun setupViewModel(){
-        viewModel = (requireActivity() as MainActivity).viewModel
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         movieHorizontalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
         movieVerticalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
     }

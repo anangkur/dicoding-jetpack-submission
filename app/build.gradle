@@ -14,6 +14,8 @@ android {
     }
     buildTypes {
         debug {
+            applicationIdSuffix ".debug"
+            debuggable true
             buildConfigField "String", "baseImageUrl", '"https://image.tmdb.org/t/p/original"'
             buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
             buildConfigField "String", "apiKey", '"4b9bfb0e83de2a4afb17c157ccb254f3"'
@@ -81,7 +83,6 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "androidx.arch.core:core-testing:$archLifecycleVersion"
 
-
     // Dependencies for Android unit tests
     androidTestImplementation "junit:junit:$junitVersion"
     androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
@@ -94,10 +95,12 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
     androidTestImplementation "androidx.arch.core:core-testing:$archLifecycleVersion"
-
-
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    androidTestImplementation "com.21buttons:fragment-test-rule:$fragmentTestRuleVersion"
+    debugImplementation "com.21buttons:fragment-test-rule-extras:$fragmentTestRuleVersion"
 
     // Dependencies for Idle Resource
     implementation "androidx.test.espresso:espresso-idling-resource:$idleResourceVersion"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 }

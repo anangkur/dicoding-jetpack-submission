@@ -3,7 +3,6 @@ package com.anangkur.jetpacksubmission1.feature.main
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
@@ -19,7 +18,7 @@ import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.toolbar
 
-class MainActivity : AppCompatActivity(){
+class MainActivity: AppCompatActivity(){
 
     private lateinit var tabAdapter: TabAdapter
     lateinit var viewModel: MainViewModel
@@ -68,7 +67,7 @@ class MainActivity : AppCompatActivity(){
         val resourceTvActive =  ContextCompat.getDrawable(this,R.drawable.ic_tv_active) as Drawable
         val resourceTvInActive =  ContextCompat.getDrawable(this,R.drawable.ic_tv_inactive) as Drawable
         tabAdapter.addFragment(MovieFragment(), getString(R.string.tab_movie), resourceMovieActive, resourceMovieInActive)
-        tabAdapter.addFragment(TvFragment(), getString(R.string.tab_tv), resourceTvActive, resourceTvInActive)
+        tabAdapter.addFragment(TvFragment.getInstance(), getString(R.string.tab_tv), resourceTvActive, resourceTvInActive)
     }
 
     private fun setupViewPager(){
