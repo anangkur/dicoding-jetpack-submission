@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.anangkur.jetpacksubmission1.R
+import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.feature.custom.ImageSliderFragment
 import com.anangkur.jetpacksubmission1.feature.custom.SliderTabAdapter
 import com.anangkur.jetpacksubmission1.feature.custom.TabAdapter
@@ -40,13 +41,15 @@ class MainActivity: AppCompatActivity(){
         setupSelectedCustomTab(0)
     }
 
+    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
     }
 
     private fun setupViewModel(){
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = obtainViewModel()
         val data = viewModel.createDataMoviePopular(Const.jsonPopularMovies)
         for (item in data){
             pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))

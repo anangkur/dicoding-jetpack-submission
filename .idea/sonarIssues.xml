@@ -13,6 +13,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../MADESubmission1/app/src/main/java/com/anangkur/madesubmission1/data/ViewModelFactory.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/anangkur/jetpacksubmission1/feature/detail/DetailActivityTest.kt">
           <value>
             <set />
@@ -78,7 +88,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/DataSource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/Injection.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/Repository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/ViewModelFactory.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/local/SharedPreferenceHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/data/remote/RemoteRepository.kt">
           <value>
             <set />
           </value>
@@ -98,7 +133,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/MainViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/movie/MovieFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/feature/main/tv/TvFragment.kt">
           <value>
             <set />
           </value>
@@ -403,6 +448,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../android-nutricell/app/src/main/java/id/co/nutricell/gits/mvvm/profile/ProfileFragment.kt">
           <value>
             <set />
@@ -429,6 +479,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../android-nutricell/app/src/main/res/layout/resep_dokter_detail_item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../sarihusada-ebidan-android/app/src/main/java/id/gits/bidanconnect/mvvm/education/kategori/EducationKategoriFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../sarihusada-ebidan-android/app/src/main/java/id/gits/bidanconnect/mvvm/education/terbaru/EducationTerbaruFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../sarihusada-ebidan-android/app/src/main/res/layout/education_favorit_fragment.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../sarihusada-ebidan-android/app/src/main/res/layout/education_kategori_item.xml">
           <value>
             <set />
           </value>

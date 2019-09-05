@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import com.anangkur.jetpacksubmission1.BuildConfig
 import com.anangkur.jetpacksubmission1.R
+import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.utils.Const
 import com.anangkur.jetpacksubmission1.utils.Utils
@@ -25,6 +26,8 @@ class DetailActivity: AppCompatActivity() {
         setContentView(R.layout.activity_detail)
     }
 
+    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(DetailViewModel::class.java)
+
     override fun onStart() {
         super.onStart()
         setupToolbar()
@@ -39,7 +42,7 @@ class DetailActivity: AppCompatActivity() {
     }
 
     private fun setupViewModel(){
-        viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
+        viewModel = obtainViewModel()
         viewModel.result = getResultIntent(intent)
         setupDataToView(viewModel.result)
     }
