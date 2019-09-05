@@ -3,6 +3,7 @@ package com.anangkur.jetpacksubmission1.feature.main
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
@@ -57,6 +58,13 @@ class MainActivity: AppCompatActivity(){
                     pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
                 }
                 setupSliderPage(pagerAdapter)
+            })
+            getShowProgressMovie().observe(this@MainActivity, Observer {
+                if (it){
+                    pb_slider.visibility = View.VISIBLE
+                }else{
+                    pb_slider.visibility = View.GONE
+                }
             })
         }
     }

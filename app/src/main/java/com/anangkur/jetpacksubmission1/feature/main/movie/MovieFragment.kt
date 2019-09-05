@@ -40,6 +40,13 @@ class MovieFragment: Fragment(), MovieItemListener{
                 movieHorizontalAdapter.setRecyclerData(it.results)
                 movieVerticalAdapter.setRecyclerData(it.results)
             })
+            getShowProgressMovie().observe(this@MovieFragment, Observer {
+                if (it){
+                    pb_movie.visibility = View.VISIBLE
+                }else{
+                    pb_movie.visibility = View.GONE
+                }
+            })
         }
     }
 

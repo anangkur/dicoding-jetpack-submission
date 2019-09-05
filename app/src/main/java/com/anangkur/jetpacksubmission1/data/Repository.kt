@@ -7,14 +7,16 @@ import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
 class Repository(val remoteRepository: RemoteRepository): DataSource{
 
-    override fun getData(page: Int, urlType: String, urlFilter: String): LiveData<Response> {
+    override fun getData(page: Int, urlType: String, urlFilter: String, callback: DataSource.ProgressDialogCallback): LiveData<Response> {
+        callback.onShowProgressDialog()
         val response = MutableLiveData<Response>()
         remoteRepository.getData(page, urlType, urlFilter, object: RemoteRepository.LoadMovieCallback{
             override fun onDataReceived(data: Response) {
                 response.value = data
+                callback.onHideProgressDialog()
             }
             override fun onDataNotAvailable() {
-                // do nothing
+                callback.onHideProgressDialog()
             }
         })
         return response

@@ -71,6 +71,13 @@ class TvFragment: Fragment(), MovieItemListener{
                 adapterNew.setRecyclerData(it.results)
                 adapterRating.setRecyclerData(it.results)
             })
+            getShowProgressTv().observe(this@TvFragment, Observer {
+                if (it){
+                    pb_tv.visibility = View.VISIBLE
+                }else{
+                    pb_tv.visibility = View.GONE
+                }
+            })
         }
     }
 

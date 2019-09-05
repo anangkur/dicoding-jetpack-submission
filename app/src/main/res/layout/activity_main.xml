@@ -13,6 +13,12 @@
                 android:id="@+id/vp_slider"
                 style="@style/ViewPagerDefault"
                 android:layout_height="@dimen/dimens_280dp"/>
+            <ProgressBar
+                android:id="@+id/pb_slider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:progressBarStyleSmall"
+                android:layout_gravity="center"/>
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
