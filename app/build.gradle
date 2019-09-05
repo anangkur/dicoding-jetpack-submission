@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -54,13 +55,18 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // Dependencies for Android Support
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxVersion"
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
     implementation "androidx.cardview:cardview:$cardVersion"
-    implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "androidx.annotation:annotation:$androidXAnnotations"
     implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+
+    // google material
+    implementation "com.google.android.material:material:$materialVersion"
 
     // Dependencies for Architecture Component
     implementation "androidx.room:room-runtime:$roomVersion"
@@ -104,4 +110,6 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3Version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
 }

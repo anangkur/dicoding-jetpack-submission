@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.anangkur.jetpacksubmission1.R
@@ -49,12 +50,15 @@ class MainActivity: AppCompatActivity(){
     }
 
     private fun setupViewModel(){
-        viewModel = obtainViewModel()
-        val data = viewModel.createDataMoviePopular(Const.jsonPopularMovies)
-        for (item in data){
-            pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
+        viewModel = obtainViewModel().apply {
+            getMoviePopular(1).observe(this@MainActivity, Observer {
+                val data = it.results
+                for (item in data){
+                    pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
+                }
+                setupSliderPage(pagerAdapter)
+            })
         }
-        setupSliderPage(pagerAdapter)
     }
 
     private fun disableClickTablayout(tabLayout: TabLayout){

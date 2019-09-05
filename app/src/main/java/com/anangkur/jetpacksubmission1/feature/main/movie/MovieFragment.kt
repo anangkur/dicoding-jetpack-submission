@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anangkur.jetpacksubmission1.R
@@ -34,9 +35,12 @@ class MovieFragment: Fragment(), MovieItemListener{
     }
 
     private fun setupViewModel(){
-        viewModel = (requireActivity() as  MainActivity).obtainViewModel()
-        movieHorizontalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
-        movieVerticalAdapter.setRecyclerData(viewModel.createDataMoviePopular(Const.jsonPopularMovies))
+        viewModel = (requireActivity() as  MainActivity).obtainViewModel().apply {
+            getMoviePopular(1).observe(this@MovieFragment, Observer {
+                movieHorizontalAdapter.setRecyclerData(it.results)
+                movieVerticalAdapter.setRecyclerData(it.results)
+            })
+        }
     }
 
     private fun setupVerticalAdapter(){
