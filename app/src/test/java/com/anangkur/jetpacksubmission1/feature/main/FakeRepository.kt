@@ -1,11 +1,12 @@
-package com.anangkur.jetpacksubmission1.data
+package com.anangkur.jetpacksubmission1.feature.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.anangkur.jetpacksubmission1.data.DataSource
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
-class Repository(val remoteRepository: RemoteRepository): DataSource{
+class FakeRepository(val remoteRepository: RemoteRepository): DataSource {
 
     override fun getData(page: Int, urlType: String, urlFilter: String): LiveData<Response> {
         val response = MutableLiveData<Response>()
@@ -21,9 +22,9 @@ class Repository(val remoteRepository: RemoteRepository): DataSource{
     }
 
     companion object{
-        @Volatile private var INSTANCE: Repository? = null
-        fun getInstance(remoteRepository: RemoteRepository) = INSTANCE ?: synchronized(Repository::class.java){
-            INSTANCE ?: Repository(remoteRepository).also { INSTANCE = it }
+        @Volatile private var INSTANCE: FakeRepository? = null
+        fun getInstance(remoteRepository: RemoteRepository) = INSTANCE ?: synchronized(FakeRepository::class.java){
+            INSTANCE ?: FakeRepository(remoteRepository).also { INSTANCE = it }
         }
     }
 }

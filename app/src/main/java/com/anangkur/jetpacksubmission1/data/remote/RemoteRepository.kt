@@ -12,17 +12,17 @@ class RemoteRepository {
 
     fun getData(page: Int, urlType: String, urlFilter: String, callback: LoadMovieCallback){
         CoroutineScope(Dispatchers.IO).launch {
-            val response = ApiService.getApiService.getData(urlType, urlFilter, apiKey, page)
-            withContext(Dispatchers.Main){
-                try {
+            try {
+                val response = ApiService.getApiService.getData(urlType, urlFilter, apiKey, page)
+                withContext(Dispatchers.Main){
                     if (response.results.isNotEmpty()){
                         callback.onDataReceived(response)
                     }else{
                         callback.onDataNotAvailable()
                     }
-                }catch (e: Exception){
-                    callback.onDataNotAvailable()
                 }
+            }catch (e: Exception){
+                callback.onDataNotAvailable()
             }
         }
     }

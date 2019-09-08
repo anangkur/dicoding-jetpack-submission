@@ -37,15 +37,10 @@ class MovieFragment: Fragment(), MovieItemListener{
     private fun setupViewModel(){
         viewModel = (requireActivity() as  MainActivity).obtainViewModel().apply {
             getMoviePopular(1).observe(this@MovieFragment, Observer {
+                pb_movie.visibility = View.VISIBLE
                 movieHorizontalAdapter.setRecyclerData(it.results)
                 movieVerticalAdapter.setRecyclerData(it.results)
-            })
-            getShowProgressMovie().observe(this@MovieFragment, Observer {
-                if (it){
-                    pb_movie.visibility = View.VISIBLE
-                }else{
-                    pb_movie.visibility = View.GONE
-                }
+                pb_movie.visibility = View.GONE
             })
         }
     }

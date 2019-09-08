@@ -67,16 +67,11 @@ class TvFragment: Fragment(), MovieItemListener{
     private fun setupViewModel(){
         viewModel = (requireActivity() as MainActivity).obtainViewModel().apply {
             getTvPopular(1).observe(this@TvFragment, Observer {
+                pb_tv.visibility = View.VISIBLE
                 adapterPopular.setRecyclerData(it.results)
                 adapterNew.setRecyclerData(it.results)
                 adapterRating.setRecyclerData(it.results)
-            })
-            getShowProgressTv().observe(this@TvFragment, Observer {
-                if (it){
-                    pb_tv.visibility = View.VISIBLE
-                }else{
-                    pb_tv.visibility = View.GONE
-                }
+                pb_tv.visibility = View.GONE
             })
         }
     }

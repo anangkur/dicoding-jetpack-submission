@@ -52,19 +52,14 @@ class MainActivity: AppCompatActivity(){
 
     private fun setupViewModel(){
         viewModel = obtainViewModel().apply {
+            pb_slider.visibility = View.VISIBLE
             getMoviePopular(1).observe(this@MainActivity, Observer {
                 val data = it.results
                 for (item in data){
                     pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
                 }
                 setupSliderPage(pagerAdapter)
-            })
-            getShowProgressMovie().observe(this@MainActivity, Observer {
-                if (it){
-                    pb_slider.visibility = View.VISIBLE
-                }else{
-                    pb_slider.visibility = View.GONE
-                }
+                pb_slider.visibility = View.GONE
             })
         }
     }

@@ -463,7 +463,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/data/RepositoryTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/detail/DetailViewModelTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/main/FakeConst.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/main/FakeRepository.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/com/anangkur/jetpacksubmission1/feature/main/LiveDataTestUtil.kt">
           <value>
             <set />
           </value>
