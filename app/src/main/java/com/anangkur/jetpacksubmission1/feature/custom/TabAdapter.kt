@@ -2,11 +2,11 @@ package com.anangkur.jetpacksubmission1.feature.custom
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.view.LayoutInflater
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import android.view.LayoutInflater
-import android.view.View
 import com.anangkur.jetpacksubmission1.R
 import kotlinx.android.synthetic.main.tab_custom.view.*
 

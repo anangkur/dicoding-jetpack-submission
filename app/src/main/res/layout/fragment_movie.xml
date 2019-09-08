@@ -27,6 +27,7 @@
             android:id="@+id/recycler_horizontal"
             style="@style/RecyclerWrap"
             android:paddingEnd="@dimen/dimens_16dp"
+            android:paddingStart="@dimen/dimens_0dp"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_title_now_playing"

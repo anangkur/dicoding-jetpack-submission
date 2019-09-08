@@ -2,9 +2,9 @@ package com.anangkur.jetpacksubmission1.feature.detail
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import com.anangkur.jetpacksubmission1.BuildConfig
@@ -26,7 +26,7 @@ class DetailActivity: AppCompatActivity() {
         setContentView(R.layout.activity_detail)
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(DetailViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(DetailViewModel::class.java)
 
     override fun onStart() {
         super.onStart()

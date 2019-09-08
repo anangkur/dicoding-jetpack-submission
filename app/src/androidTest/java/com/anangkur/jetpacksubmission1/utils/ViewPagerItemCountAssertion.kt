@@ -27,7 +27,7 @@ class ViewPagerItemCountAssertion(private val matcher: Matcher<Int>) :
             return withItemCount(Is.`is`(expectedCount))
         }
 
-        fun withItemCount(matcher: Matcher<Int>): RecyclerViewItemCountAssertion {
+        private fun withItemCount(matcher: Matcher<Int>): RecyclerViewItemCountAssertion {
             return RecyclerViewItemCountAssertion(matcher)
         }
     }

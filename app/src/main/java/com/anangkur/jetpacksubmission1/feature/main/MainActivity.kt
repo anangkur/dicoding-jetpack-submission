@@ -1,10 +1,10 @@
 package com.anangkur.jetpacksubmission1.feature.main
 
 import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,10 +16,8 @@ import com.anangkur.jetpacksubmission1.feature.custom.SliderTabAdapter
 import com.anangkur.jetpacksubmission1.feature.custom.TabAdapter
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieFragment
 import com.anangkur.jetpacksubmission1.feature.main.tv.TvFragment
-import com.anangkur.jetpacksubmission1.utils.Const
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.toolbar
 
 class MainActivity: AppCompatActivity(){
 
@@ -43,7 +41,7 @@ class MainActivity: AppCompatActivity(){
         setupSelectedCustomTab(0)
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
 
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
@@ -52,19 +50,14 @@ class MainActivity: AppCompatActivity(){
 
     private fun setupViewModel(){
         viewModel = obtainViewModel().apply {
+            pb_slider.visibility = View.VISIBLE
             getMoviePopular(1).observe(this@MainActivity, Observer {
                 val data = it.results
                 for (item in data){
                     pagerAdapter.addFragment(ImageSliderFragment.getInstance(item))
                 }
                 setupSliderPage(pagerAdapter)
-            })
-            getShowProgressMovie().observe(this@MainActivity, Observer {
-                if (it){
-                    pb_slider.visibility = View.VISIBLE
-                }else{
-                    pb_slider.visibility = View.GONE
-                }
+                pb_slider.visibility = View.GONE
             })
         }
     }
