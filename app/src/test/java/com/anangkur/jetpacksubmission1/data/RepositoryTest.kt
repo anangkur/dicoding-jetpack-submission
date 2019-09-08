@@ -5,14 +5,15 @@ import com.anangkur.jetpacksubmission1.BuildConfig
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 import com.anangkur.jetpacksubmission1.feature.main.FakeConst
-import com.google.gson.Gson
-import org.junit.Test
-import org.junit.Before
-import org.junit.Assert.*
-import org.junit.Rule
 import com.anangkur.jetpacksubmission1.feature.main.FakeRepository
 import com.anangkur.jetpacksubmission1.feature.main.LiveDataTestUtil
+import com.google.gson.Gson
 import com.nhaarman.mockitokotlin2.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 

@@ -1,10 +1,10 @@
 package com.anangkur.jetpacksubmission1.feature.main
 
 import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,10 +16,8 @@ import com.anangkur.jetpacksubmission1.feature.custom.SliderTabAdapter
 import com.anangkur.jetpacksubmission1.feature.custom.TabAdapter
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieFragment
 import com.anangkur.jetpacksubmission1.feature.main.tv.TvFragment
-import com.anangkur.jetpacksubmission1.utils.Const
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.toolbar
 
 class MainActivity: AppCompatActivity(){
 
@@ -43,7 +41,7 @@ class MainActivity: AppCompatActivity(){
         setupSelectedCustomTab(0)
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
 
     private fun setupToolbar(){
         setSupportActionBar(toolbar)

@@ -5,6 +5,7 @@
     android:paddingTop="@dimen/dimens_16dp"
     android:paddingBottom="@dimen/dimens_16dp"
     android:paddingStart="@dimen/dimens_16dp"
+    android:paddingEnd="@dimen/dimens_0dp"
     android:foreground="?selectableItemBackground">
     <ImageView
         android:id="@+id/iv_item"

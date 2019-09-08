@@ -1,6 +1,5 @@
 package com.anangkur.jetpacksubmission1.data
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.anangkur.jetpacksubmission1.feature.detail.DetailViewModel

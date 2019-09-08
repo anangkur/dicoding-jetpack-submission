@@ -2,7 +2,6 @@ package com.anangkur.jetpacksubmission1.utils
 
 import android.content.Context
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import java.util.*
 
 object Utils{
     fun nomalizeRating(oldValue: Float): Float{

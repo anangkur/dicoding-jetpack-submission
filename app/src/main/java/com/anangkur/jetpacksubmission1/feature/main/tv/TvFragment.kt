@@ -14,10 +14,8 @@ import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
-import com.anangkur.jetpacksubmission1.feature.main.MainActivity
 import com.anangkur.jetpacksubmission1.feature.main.MainViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
-import com.anangkur.jetpacksubmission1.utils.Const
 import kotlinx.android.synthetic.main.fragment_tv.*
 
 class TvFragment: Fragment(), MovieItemListener{
@@ -66,7 +64,7 @@ class TvFragment: Fragment(), MovieItemListener{
         }
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
 
     private fun setupViewModel(){
         viewModel = obtainViewModel().apply {

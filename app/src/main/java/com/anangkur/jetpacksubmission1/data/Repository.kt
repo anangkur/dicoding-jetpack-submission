@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
-class Repository(val remoteRepository: RemoteRepository): DataSource{
+class Repository(private val remoteRepository: RemoteRepository): DataSource{
 
     override fun getData(page: Int, urlType: String, urlFilter: String): LiveData<Response> {
         val response = MutableLiveData<Response>()

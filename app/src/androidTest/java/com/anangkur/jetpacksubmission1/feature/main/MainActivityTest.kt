@@ -1,18 +1,18 @@
 package com.anangkur.jetpacksubmission1.feature.main
 
-import androidx.test.rule.ActivityTestRule
-import org.junit.Test
-import org.junit.Rule
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.rule.ActivityTestRule
 import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.utils.EspressoIdlingResource
 import com.anangkur.jetpacksubmission1.utils.ViewPagerItemCountAssertion
 import org.hamcrest.Matchers
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 
 class MainActivityTest {
 

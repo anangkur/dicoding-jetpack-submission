@@ -6,7 +6,7 @@ import com.anangkur.jetpacksubmission1.data.DataSource
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
-class FakeRepository(val remoteRepository: RemoteRepository): DataSource {
+class FakeRepository(private val remoteRepository: RemoteRepository): DataSource {
 
     override fun getData(page: Int, urlType: String, urlFilter: String): LiveData<Response> {
         val response = MutableLiveData<Response>()
@@ -19,12 +19,5 @@ class FakeRepository(val remoteRepository: RemoteRepository): DataSource {
             }
         })
         return response
-    }
-
-    companion object{
-        @Volatile private var INSTANCE: FakeRepository? = null
-        fun getInstance(remoteRepository: RemoteRepository) = INSTANCE ?: synchronized(FakeRepository::class.java){
-            INSTANCE ?: FakeRepository(remoteRepository).also { INSTANCE = it }
-        }
     }
 }

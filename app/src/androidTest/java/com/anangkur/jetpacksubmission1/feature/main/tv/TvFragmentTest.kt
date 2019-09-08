@@ -7,12 +7,12 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.anangkur.jetpacksubmission1.utils.EspressoIdlingResource
 import com.anangkur.jetpacksubmission1.utils.RecyclerViewItemCountAssertion
-import org.junit.Test
-import org.junit.Rule
 import com.android21buttons.fragmenttestrule.FragmentTestRule
 import org.hamcrest.Matchers.greaterThan
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 
 class TvFragmentTest {
 

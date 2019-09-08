@@ -1,6 +1,6 @@
 package com.anangkur.jetpacksubmission1.feature.main
 
-import android.app.Application
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.anangkur.jetpacksubmission1.BuildConfig
@@ -10,13 +10,11 @@ import com.google.gson.Gson
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import org.junit.Test
 import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import org.junit.Rule
-
 
 
 class MainViewModelTest {
@@ -24,13 +22,12 @@ class MainViewModelTest {
     @get:Rule var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: MainViewModel
-    @Mock private lateinit var application: Application
     @Mock private lateinit var repository: Repository
 
     @Before
     fun setup(){
         MockitoAnnotations.initMocks(this)
-        viewModel = MainViewModel(application, repository)
+        viewModel = MainViewModel(repository)
     }
 
     @Test

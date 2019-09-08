@@ -40,5 +40,6 @@
     <string name="desc_image_tv">image for tv</string>
     <string name="desc_image_popular">image for movie popular</string>
     <string name="desc_image_slider">image for slider</string>
+    <string name="desc_image_detail">image for now playing movie</string>
     <!--end of error-->
 </resources>
