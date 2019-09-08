@@ -38,6 +38,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/anangkur/jetpacksubmission1/feature/main/movie/MovieFragmentTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/anangkur/jetpacksubmission1/feature/main/tv/TvFragmentTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/anangkur/jetpacksubmission1/utils/FakeConst.kt">
           <value>
             <set />
@@ -159,6 +169,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/utils/Const.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/anangkur/jetpacksubmission1/utils/EspressoIdlingResource.kt">
           <value>
             <set />
           </value>

@@ -26,7 +26,7 @@ class DetailActivity: AppCompatActivity() {
         setContentView(R.layout.activity_detail)
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(DetailViewModel::class.java)
+    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(DetailViewModel::class.java)
 
     override fun onStart() {
         super.onStart()

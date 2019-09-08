@@ -43,7 +43,7 @@ class MainActivity: AppCompatActivity(){
         setupSelectedCustomTab(0)
     }
 
-    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(application)).get(MainViewModel::class.java)
+    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
 
     private fun setupToolbar(){
         setSupportActionBar(toolbar)

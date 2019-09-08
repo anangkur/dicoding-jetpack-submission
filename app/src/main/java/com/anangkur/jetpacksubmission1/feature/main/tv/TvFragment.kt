@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anangkur.jetpacksubmission1.R
+import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
 import com.anangkur.jetpacksubmission1.feature.main.MainActivity
@@ -64,8 +66,10 @@ class TvFragment: Fragment(), MovieItemListener{
         }
     }
 
+    fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
+
     private fun setupViewModel(){
-        viewModel = (requireActivity() as MainActivity).obtainViewModel().apply {
+        viewModel = obtainViewModel().apply {
             getTvPopular(1).observe(this@TvFragment, Observer {
                 pb_tv.visibility = View.VISIBLE
                 adapterPopular.setRecyclerData(it.results)
