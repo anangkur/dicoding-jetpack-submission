@@ -1,7 +1,11 @@
 package com.anangkur.jetpacksubmission1.feature.main
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +18,7 @@ import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.feature.custom.ImageSliderFragment
 import com.anangkur.jetpacksubmission1.feature.custom.SliderTabAdapter
 import com.anangkur.jetpacksubmission1.feature.custom.TabAdapter
+import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteActivity
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieFragment
 import com.anangkur.jetpacksubmission1.feature.main.tv.TvFragment
 import com.google.android.material.tabs.TabLayout
@@ -41,7 +46,19 @@ class MainActivity: AppCompatActivity(){
         setupSelectedCustomTab(0)
     }
 
-    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(this)).get(MainViewModel::class.java)
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_favourite, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.menu_favourite -> FavouriteActivity.startActivity(this)
+        }
+        return true
+    }
 
     private fun setupToolbar(){
         setSupportActionBar(toolbar)

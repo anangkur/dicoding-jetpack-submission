@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearVerticalDefault">
+    <RelativeLayout
+        style="@style/RelativeWrap">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_fav"
+            style="@style/RecyclerDefault"
+            android:background="@color/white"/>
+        <ProgressBar
+            android:id="@+id/pb_recycler_fav"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="?android:progressBarStyleSmall"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</LinearLayout>

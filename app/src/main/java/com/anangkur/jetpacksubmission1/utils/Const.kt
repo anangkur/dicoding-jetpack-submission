@@ -2,7 +2,39 @@ package com.anangkur.jetpacksubmission1.utils
 
 object Const {
 
+    const val REQUEST_CODE_FAVOURITE_MOVIE = 100
+    const val REQUEST_CODE_FAVOURITE_TV = 101
+    const val RESULT_CODE_DETAIL = 200
+
+    const val TYPE_MOVIE = 2
+    const val TYPE_TV = 1
+
     const val EXTRA_DETAIL = "EXTRA_DETAIL"
+    const val EXTRA_TYPE = "EXTRA_TYPE"
 
     const val BUNDLE_RESULT = "BUNDLE_RESULT"
+
+    const val DATABASE_RESULT = "DATABASE_RESULT"
+
+    const val COLUMN_ID = "COLUMN_ID"
+    const val COLUMN_TYPE = "COLUMN_TYPE"
+    const val COLUMN_FAVOURITE = "COLUMN_FAVOURITE"
+    const val COLUMN_ADULT = "COLUMN_ADULT"
+    const val COLUMN_BACKDROP_PATH = "COLUMN_BACKDROP_PATH"
+    const val COLUMN_GENRE_IDS = "COLUMN_GENRE_IDS"
+    const val COLUMN_ORIGINAL_LANGUAGE = "COLUMN_ORIGINAL_LANGUAGE"
+    const val COLUMN_ORIGINAL_TITLE = "COLUMN_ORIGINAL_TITLE"
+    const val COLUMN_ORIGINAL_NAME = "COLUMN_ORIGINAL_NAME"
+    const val COLUMN_OVERVIEW = "COLUMN_OVERVIEW"
+    const val COLUMN_POPULARITY = "COLUMN_POPULARITY"
+    const val COLUMN_POSTER_PATH = "COLUMN_POSTER_PATH"
+    const val COLUMN_RELEASE_DATE = "COLUMN_RELEASE_DATE"
+    const val COLUMN_TITLE = "COLUMN_TITLE"
+    const val COLUMN_NAME = "COLUMN_NAME"
+    const val COLUMN_VIDEO = "COLUMN_VIDEO"
+    const val COLUMN_VOTE_AVERAGE = "COLUMN_VOTE_AVERAGE"
+    const val COLUMN_VOTE_COUNT = "COLUMN_VOTE_COUNT"
+
+    const val FAVOURITE_TRUE = "TRUE"
+    const val FAVOURITE_FALSE = "FALSE"
 }
