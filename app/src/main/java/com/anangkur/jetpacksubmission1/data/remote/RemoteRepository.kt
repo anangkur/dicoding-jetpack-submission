@@ -1,6 +1,7 @@
 package com.anangkur.jetpacksubmission1.data.remote
 
 import com.anangkur.jetpacksubmission1.BuildConfig.apiKey
+import com.anangkur.jetpacksubmission1.data.DataCallback
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.utils.EspressoIdlingResource
 import kotlinx.coroutines.CoroutineScope
@@ -29,12 +30,7 @@ class RemoteRepository {
         }
     }
 
-    interface LoadMovieCallback: LoadDataCallback<Response>
-
-    interface LoadDataCallback<T>{
-        fun onDataReceived(data: T)
-        fun onDataNotAvailable()
-    }
+    interface LoadMovieCallback: DataCallback<Response>
 
     companion object{
         private var INSTANCE: RemoteRepository? = null

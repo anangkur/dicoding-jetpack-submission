@@ -16,6 +16,7 @@ import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
 import com.anangkur.jetpacksubmission1.feature.main.MainViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
+import com.anangkur.jetpacksubmission1.utils.Const
 import kotlinx.android.synthetic.main.fragment_tv.*
 
 class TvFragment: Fragment(), MovieItemListener{
@@ -64,7 +65,7 @@ class TvFragment: Fragment(), MovieItemListener{
         }
     }
 
-    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance()).get(MainViewModel::class.java)
+    private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(requireContext())).get(MainViewModel::class.java)
 
     private fun setupViewModel(){
         viewModel = obtainViewModel().apply {
@@ -79,7 +80,7 @@ class TvFragment: Fragment(), MovieItemListener{
     }
 
     override fun onClickItem(data: Result) {
-        DetailActivity.startActivity(requireContext(), data)
+        DetailActivity.startActivity(requireContext(), data, Const.TYPE_TV)
     }
 
     companion object{

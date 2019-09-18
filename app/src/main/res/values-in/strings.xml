@@ -11,6 +11,7 @@
     <!--end of others-->
 
     <!--toolbar-->
+    <string name="toolbar_favorite">Favorit</string>
     <!--end of toolbar-->
 
     <!--tab-->
@@ -32,6 +33,7 @@
     <!--text button-->
 
     <!--menu-->
+    <string name="menu_favourite">Favorit</string>
     <!--end of menu-->
 
     <!--error-->
