@@ -17,12 +17,13 @@ import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
 import kotlinx.android.synthetic.main.fragment_favourite_movie.*
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
+import com.anangkur.jetpacksubmission1.feature.favourite.FavouritePagedAdapter
 import com.anangkur.jetpacksubmission1.utils.Const
 
 class FavouriteMovieFragment: Fragment(), MovieItemListener{
 
     private lateinit var viewModel: FavouriteViewModel
-    private lateinit var favMovieAdapter: FavouriteAdapter
+    private lateinit var favMovieAdapter: FavouritePagedAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_favourite_movie, container, false)
@@ -40,14 +41,14 @@ class FavouriteMovieFragment: Fragment(), MovieItemListener{
     private fun setupViewModel(){
         viewModel = obtainViewModel()
         viewModel.apply {
-            getAllDataMovie().observe(this@FavouriteMovieFragment, Observer {
-                favMovieAdapter.setRecyclerData(it!!)
+            getAllDataMoviePaged().observe(this@FavouriteMovieFragment, Observer {
+                favMovieAdapter.submitList(it)
             })
         }
     }
 
     private fun setupAdapter(){
-        favMovieAdapter = FavouriteAdapter(this)
+        favMovieAdapter = FavouritePagedAdapter(this)
         recycler_fav.apply {
             adapter = favMovieAdapter
             itemAnimator = DefaultItemAnimator()

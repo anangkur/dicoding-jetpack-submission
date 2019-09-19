@@ -1,5 +1,6 @@
 package com.anangkur.jetpacksubmission1.data.local
 
+import androidx.paging.DataSource
 import com.anangkur.jetpacksubmission1.data.DataCallback
 import com.anangkur.jetpacksubmission1.data.local.room.ResultDao
 import com.anangkur.jetpacksubmission1.data.model.Result
@@ -9,6 +10,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LocalRepository(private val resultDao: ResultDao){
+
+    fun getAllResultPaged(type: Int, callback: GetAllResultPagedCallback){
+        callback.onDataReceived(resultDao.getAllResultPaged(type))
+    }
 
     fun getAllResult(type: Int, callback: GetAllResultCallback){
         CoroutineScope(Dispatchers.IO).launch {
@@ -62,6 +67,7 @@ class LocalRepository(private val resultDao: ResultDao){
 
     interface GetAllResultCallback: DataCallback<List<Result>>
     interface GetResultByIdCallback: DataCallback<Result>
+    interface GetAllResultPagedCallback: DataCallback<DataSource.Factory<Int, Result>>
 
     companion object{
         private var INSTANCE: LocalRepository? = null
