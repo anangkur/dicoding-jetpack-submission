@@ -2,12 +2,28 @@ package com.anangkur.jetpacksubmission1.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.anangkur.jetpacksubmission1.data.local.LocalRepository
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository): DataSource{
+    override fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result> {
+        var response: androidx.paging.DataSource.Factory<Int, Result>? = null
+        localRepository.getAllResultPaged(type, object: LocalRepository.GetAllResultPagedCallback{
+            override fun onDataReceived(data: androidx.paging.DataSource.Factory<Int, Result>) {
+                response = data
+            }
+
+            override fun onDataNotAvailable() {
+
+            }
+        })
+        return response!!
+    }
+
     override fun getAllResult(type: Int): LiveData<List<Result>> {
         val response = MutableLiveData<List<Result>>()
         localRepository.getAllResult(type, object: LocalRepository.GetAllResultCallback{

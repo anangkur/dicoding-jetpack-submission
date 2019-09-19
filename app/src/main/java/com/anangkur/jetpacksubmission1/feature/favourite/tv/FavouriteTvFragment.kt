@@ -14,6 +14,7 @@ import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
 import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteAdapter
+import com.anangkur.jetpacksubmission1.feature.favourite.FavouritePagedAdapter
 import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
 import com.anangkur.jetpacksubmission1.utils.Const
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_favourite_tv.*
 class FavouriteTvFragment : Fragment(), MovieItemListener{
 
     private lateinit var viewModel: FavouriteViewModel
-    private lateinit var favMovieAdapter: FavouriteAdapter
+    private lateinit var favMovieAdapter: FavouritePagedAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_favourite_tv, container, false)
@@ -40,14 +41,14 @@ class FavouriteTvFragment : Fragment(), MovieItemListener{
     private fun setupViewModel(){
         viewModel = obtainViewModel()
         viewModel.apply {
-            getAllDataTv().observe(this@FavouriteTvFragment, Observer {
-                favMovieAdapter.setRecyclerData(it!!)
+            getAllDataTvPaged().observe(this@FavouriteTvFragment, Observer {
+                favMovieAdapter.submitList(it)
             })
         }
     }
 
     private fun setupAdapter(){
-        favMovieAdapter = FavouriteAdapter(this)
+        favMovieAdapter = FavouritePagedAdapter(this)
         recycler_fav.apply {
             adapter = favMovieAdapter
             itemAnimator = DefaultItemAnimator()
