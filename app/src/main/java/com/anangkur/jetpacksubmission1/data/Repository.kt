@@ -10,32 +10,8 @@ import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository): DataSource{
-    override fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result> {
-        var response: androidx.paging.DataSource.Factory<Int, Result>? = null
-        localRepository.getAllResultPaged(type, object: LocalRepository.GetAllResultPagedCallback{
-            override fun onDataReceived(data: androidx.paging.DataSource.Factory<Int, Result>) {
-                response = data
-            }
 
-            override fun onDataNotAvailable() {
-
-            }
-        })
-        return response!!
-    }
-
-    override fun getAllResult(type: Int): LiveData<List<Result>> {
-        val response = MutableLiveData<List<Result>>()
-        localRepository.getAllResult(type, object: LocalRepository.GetAllResultCallback{
-            override fun onDataReceived(data: List<Result>) {
-                response.value = data
-            }
-            override fun onDataNotAvailable() {
-
-            }
-        })
-        return response
-    }
+    override fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result> = localRepository.getAllResultPaged(type)
 
     override fun bulkInsert(data: Result) {
         localRepository.bulkInsert(data)

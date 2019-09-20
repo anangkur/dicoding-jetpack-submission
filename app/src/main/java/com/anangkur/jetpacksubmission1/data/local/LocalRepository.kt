@@ -11,26 +11,7 @@ import kotlinx.coroutines.withContext
 
 class LocalRepository(private val resultDao: ResultDao){
 
-    fun getAllResultPaged(type: Int, callback: GetAllResultPagedCallback){
-        callback.onDataReceived(resultDao.getAllResultPaged(type))
-    }
-
-    fun getAllResult(type: Int, callback: GetAllResultCallback){
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val data = resultDao.getAllResult(type)
-                withContext(Dispatchers.Main){
-                    if (data.isNotEmpty()){
-                        callback.onDataReceived(data)
-                    }else{
-                        callback.onDataNotAvailable()
-                    }
-                }
-            }catch (e: Exception){
-                callback.onDataNotAvailable()
-            }
-        }
-    }
+    fun getAllResultPaged(type: Int): DataSource.Factory<Int, Result> = resultDao.getAllResultPaged(type)
 
     fun bulkInsert(data: Result){
         CoroutineScope(Dispatchers.IO).launch {
@@ -65,9 +46,7 @@ class LocalRepository(private val resultDao: ResultDao){
         }
     }
 
-    interface GetAllResultCallback: DataCallback<List<Result>>
     interface GetResultByIdCallback: DataCallback<Result>
-    interface GetAllResultPagedCallback: DataCallback<DataSource.Factory<Int, Result>>
 
     companion object{
         private var INSTANCE: LocalRepository? = null
