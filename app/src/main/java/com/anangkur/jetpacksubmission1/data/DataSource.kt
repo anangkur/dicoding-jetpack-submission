@@ -12,5 +12,5 @@ interface DataSource {
     fun deleteData(id: Int)
     fun getResultById(id: Int): LiveData<Result>
 
-    fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result>
+    fun getAllResultPaged(type: Int): LiveData<PagedList<Result>>
 }

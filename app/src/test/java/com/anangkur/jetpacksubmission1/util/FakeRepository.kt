@@ -1,7 +1,9 @@
-package com.anangkur.jetpacksubmission1.feature.main
+package com.anangkur.jetpacksubmission1.util
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.anangkur.jetpacksubmission1.data.DataSource
 import com.anangkur.jetpacksubmission1.data.local.LocalRepository
 import com.anangkur.jetpacksubmission1.data.model.Response
@@ -31,7 +33,7 @@ class FakeRepository(private val remoteRepository: RemoteRepository, private val
         return response
     }
 
-    override fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result> = localRepository.getAllResultPaged(type)
+    override fun getAllResultPaged(type: Int): LiveData<PagedList<Result>> = LivePagedListBuilder(localRepository.getAllResultPaged(type), 10).build()
 
     override fun getData(page: Int, urlType: String, urlFilter: String): LiveData<Response> {
         val response = MutableLiveData<Response>()

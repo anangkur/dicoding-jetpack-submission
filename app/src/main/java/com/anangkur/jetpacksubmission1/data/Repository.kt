@@ -8,10 +8,11 @@ import com.anangkur.jetpacksubmission1.data.local.LocalRepository
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
+import com.anangkur.jetpacksubmission1.utils.Const
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository): DataSource{
 
-    override fun getAllResultPaged(type: Int): androidx.paging.DataSource.Factory<Int, Result> = localRepository.getAllResultPaged(type)
+    override fun getAllResultPaged(type: Int): LiveData<PagedList<Result>> = LivePagedListBuilder(localRepository.getAllResultPaged(type), 10).build()
 
     override fun bulkInsert(data: Result) {
         localRepository.bulkInsert(data)

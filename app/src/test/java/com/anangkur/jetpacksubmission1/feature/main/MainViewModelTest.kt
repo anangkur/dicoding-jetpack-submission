@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer
 import com.anangkur.jetpacksubmission1.BuildConfig
 import com.anangkur.jetpacksubmission1.data.Repository
 import com.anangkur.jetpacksubmission1.data.model.Response
+import com.anangkur.jetpacksubmission1.util.FakeConst
 import com.google.gson.Gson
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

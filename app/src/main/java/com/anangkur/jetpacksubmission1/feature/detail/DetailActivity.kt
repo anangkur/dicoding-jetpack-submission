@@ -32,7 +32,7 @@ class DetailActivity: AppCompatActivity(), DetailActionListener {
 
     private fun obtainViewModel() = ViewModelProviders.of(this, ViewModelFactory.getInstance(this)).get(DetailViewModel::class.java)
 
-    override fun onStart() {
+    override fun onStart(){
         super.onStart()
         setupToolbar()
         setupViewModel()
