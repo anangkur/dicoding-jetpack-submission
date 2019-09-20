@@ -34,7 +34,9 @@ class DetailActivityTest {
         id = 429617,
         genre_ids = listOf(28, 12, 878, 35, 10749),
         backdrop_path = "/dihW2yTsvQlust7mSuAqJDtqW7k.jpg",
-        vote_count = 115
+        vote_count = 115,
+        favourite = "false",
+        type = 2
     )
 
     @get:Rule val activityRule = object: ActivityTestRule<DetailActivity>(DetailActivity::class.java){

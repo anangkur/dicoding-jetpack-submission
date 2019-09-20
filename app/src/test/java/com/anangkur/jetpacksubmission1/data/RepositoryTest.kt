@@ -2,6 +2,7 @@ package com.anangkur.jetpacksubmission1.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.anangkur.jetpacksubmission1.BuildConfig
+import com.anangkur.jetpacksubmission1.data.local.LocalRepository
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
 import com.anangkur.jetpacksubmission1.feature.main.FakeConst
@@ -22,6 +23,7 @@ class RepositoryTest {
     @get:Rule val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Mock private lateinit var remoteRepository: RemoteRepository
+    @Mock private lateinit var localRepository: LocalRepository
     private lateinit var repository: FakeRepository
 
     private val moviePopularResponse = Gson().fromJson(FakeConst.jsonPopularMovies, Response::class.java)
@@ -30,7 +32,7 @@ class RepositoryTest {
     @Before
     fun setup(){
         MockitoAnnotations.initMocks(this)
-        repository = FakeRepository(remoteRepository)
+        repository = FakeRepository(remoteRepository, localRepository)
     }
 
     @Test
