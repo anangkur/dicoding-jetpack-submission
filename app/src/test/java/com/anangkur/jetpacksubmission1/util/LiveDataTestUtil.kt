@@ -1,4 +1,4 @@
-package com.anangkur.jetpacksubmission1.feature.main
+package com.anangkur.jetpacksubmission1.util
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer

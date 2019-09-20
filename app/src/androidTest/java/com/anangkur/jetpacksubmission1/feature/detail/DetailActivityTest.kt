@@ -28,13 +28,15 @@ class DetailActivityTest {
         popularity = 367.979,
         overview = "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.",
         original_title = "Spider-Man: Far from Home",
-        original_name = "",
+        original_name = "Spider-Man: Far from Home",
         original_language = "en",
-        name = "",
+        name = "Spider-Man: Far from Home",
         id = 429617,
         genre_ids = listOf(28, 12, 878, 35, 10749),
         backdrop_path = "/dihW2yTsvQlust7mSuAqJDtqW7k.jpg",
-        vote_count = 115
+        vote_count = 115,
+        favourite = "true",
+        type = 1
     )
 
     @get:Rule val activityRule = object: ActivityTestRule<DetailActivity>(DetailActivity::class.java){
