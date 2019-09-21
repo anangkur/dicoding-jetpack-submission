@@ -1,7 +1,6 @@
 package com.anangkur.jetpacksubmission1.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.anangkur.jetpacksubmission1.BuildConfig
 import com.anangkur.jetpacksubmission1.data.local.LocalRepository

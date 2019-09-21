@@ -5,13 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.anangkur.jetpacksubmission1.data.Repository
 import com.anangkur.jetpacksubmission1.data.model.Result
-import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteViewModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.mockito.Mock
