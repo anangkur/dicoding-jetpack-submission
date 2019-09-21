@@ -13,14 +13,13 @@ import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.ViewModelFactory
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.feature.detail.DetailActivity
-import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteAdapter
 import com.anangkur.jetpacksubmission1.feature.favourite.FavouritePagedAdapter
 import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
 import com.anangkur.jetpacksubmission1.utils.Const
 import kotlinx.android.synthetic.main.fragment_favourite_tv.*
 
-class FavouriteTvFragment : Fragment(), MovieItemListener{
+class FavouriteTvFragment: Fragment(), MovieItemListener{
 
     private lateinit var viewModel: FavouriteViewModel
     private lateinit var favMovieAdapter: FavouritePagedAdapter

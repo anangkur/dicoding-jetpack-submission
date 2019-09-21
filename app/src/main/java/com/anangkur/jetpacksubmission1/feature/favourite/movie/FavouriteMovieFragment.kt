@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.ViewModelFactory
-import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteAdapter
 import com.anangkur.jetpacksubmission1.feature.favourite.FavouriteViewModel
 import com.anangkur.jetpacksubmission1.feature.main.movie.MovieItemListener
 import kotlinx.android.synthetic.main.fragment_favourite_movie.*

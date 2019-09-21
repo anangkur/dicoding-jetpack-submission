@@ -1,6 +1,7 @@
 package com.anangkur.jetpacksubmission1.data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import com.anangkur.jetpacksubmission1.BuildConfig
 import com.anangkur.jetpacksubmission1.data.local.LocalRepository
@@ -31,14 +32,33 @@ class RepositoryTest {
 
     private val moviePopularResponse = Gson().fromJson(FakeConst.jsonPopularMovies, Response::class.java)
     private val tvPopularresponse = Gson().fromJson(FakeConst.jsonPopularTv, Response::class.java)
+    private val fakeData = Result(
+        adult = false,
+        vote_average = 7.1f,
+        video = false,
+        title = "Spider-Man: Far from Home",
+        release_date = "2019-07-02",
+        poster_path = "/2cAc4qH9Uh2NtSujJ90fIAMrw7T.jpg",
+        popularity = 355.443,
+        overview = "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.",
+        original_title = "Spider-Man: Far from Home",
+        original_name = "Spider-Man: Far from Home",
+        original_language = "en",
+        name = "Spider-Man: Far from Home",
+        id = 429617,
+        genre_ids = listOf(28, 12, 878, 35, 10749),
+        backdrop_path = "/dihW2yTsvQlust7mSuAqJDtqW7k.jpg",
+        vote_count = 115,
+        favourite = "false",
+        type = 1
+    )
 
     @Mock private lateinit var dataSourceFactory: DataSource.Factory<Int, Result>
 
     @Before
     fun setup(){
         MockitoAnnotations.initMocks(this)
-        repository =
-            FakeRepository(remoteRepository, localRepository)
+        repository = FakeRepository(remoteRepository, localRepository)
     }
 
     @Test
@@ -91,5 +111,19 @@ class RepositoryTest {
         verify(localRepository).getAllResultPaged(FakeConst.TYPE_TV)
         assertNotNull(result)
         assertEquals(moviePopularResponse.results.size, result.size)
+    }
+
+    @Test
+    fun getResultById(){
+        doAnswer { invocation ->
+            (invocation.arguments[1] as LocalRepository.GetResultByIdCallback).onDataReceived(fakeData)
+            null
+        }.whenever(localRepository).getResultById(eq(429617), any())
+
+        val result = LiveDataTestUtil.getValue(repository.getResultById(429617))
+
+        verify(localRepository, times(1)).getResultById(eq(429617), any())
+
+        assertNotNull(result)
     }
 }
