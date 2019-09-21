@@ -38,6 +38,11 @@ class DetailActivity: AppCompatActivity(), DetailActionListener {
         setupViewModel()
     }
 
+    override fun onBackPressed() {
+        setResult(Const.RESULT_CODE_DETAIL)
+        super.onBackPressed()
+    }
+
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""

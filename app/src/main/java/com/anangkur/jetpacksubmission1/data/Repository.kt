@@ -8,7 +8,6 @@ import com.anangkur.jetpacksubmission1.data.local.LocalRepository
 import com.anangkur.jetpacksubmission1.data.model.Response
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.data.remote.RemoteRepository
-import com.anangkur.jetpacksubmission1.utils.Const
 
 class Repository(private val remoteRepository: RemoteRepository, private val localRepository: LocalRepository): DataSource{
 

@@ -2,7 +2,6 @@ package com.anangkur.jetpacksubmission1.feature.favourite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.anangkur.jetpacksubmission1.data.Repository
 import com.anangkur.jetpacksubmission1.data.model.Result
