@@ -1,6 +1,7 @@
 package com.anangkur.jetpacksubmission1.feature.detail
 
 import android.content.Intent
+import android.widget.RatingBar
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -11,16 +12,14 @@ import com.anangkur.jetpacksubmission1.R
 import com.anangkur.jetpacksubmission1.data.model.Result
 import com.anangkur.jetpacksubmission1.utils.EspressoIdlingResource
 import com.anangkur.jetpacksubmission1.utils.FakeConst
-import org.junit.After
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import com.anangkur.jetpacksubmission1.utils.Utils
+import org.junit.*
 
 class DetailActivityTest {
 
     val fakeData = Result(
         adult = false,
-        vote_average = 7.1f,
+        vote_average = 7f,
         video = false,
         title = "Spider-Man: Far from Home",
         release_date = "2019-07-02",
@@ -68,6 +67,10 @@ class DetailActivityTest {
         }
 
         onView(withId(R.id.rating)).check(matches(isDisplayed()))
+        Assert.assertEquals(
+            Utils.nomalizeRating(fakeData.vote_average),
+            activityRule.activity.findViewById<RatingBar>(R.id.rating).rating
+        )
 
         onView(withId(R.id.tv_release_date)).apply {
             check(matches(isDisplayed()))
